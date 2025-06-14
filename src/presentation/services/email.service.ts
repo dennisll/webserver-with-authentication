@@ -20,9 +20,9 @@ export class EmailService{
     private transporter: Transporter;
 
     constructor(
-        private readonly mailerService = envs.MAILER_SERVICE,
-        private readonly mailerEmail = envs.MAILER_EMAIL,
-        private readonly senderEmailPassword = envs.MAILER_SECRET_KEY,
+        private readonly mailerService: string,
+        private readonly mailerEmail: string,
+        private readonly senderEmailPassword: string,
     ){
 
 
