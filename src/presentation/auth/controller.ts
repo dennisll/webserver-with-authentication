@@ -56,7 +56,4 @@ export class AuthController {
       .catch( error => this.handleError(error, res) );
 
   }
-
-
-
 }

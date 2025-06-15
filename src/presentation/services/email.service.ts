@@ -23,6 +23,7 @@ export class EmailService{
         private readonly mailerService: string,
         private readonly mailerEmail: string,
         private readonly senderEmailPassword: string,
+        private readonly postToProvider: boolean
     ){
 
 
@@ -44,6 +45,8 @@ export class EmailService{
         const {to, subject, htmlBody, attachements=[]} = options;
 
         try {
+
+            if(!this.postToProvider) return true;
 
             const sentInformation = await this.transporter.sendMail({
                 to:to,

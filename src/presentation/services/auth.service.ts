@@ -56,7 +56,6 @@ export class AuthService {
     const isMatching = bcryptAdapter.compare( loginUserDto.password, user.password );
     if ( !isMatching ) throw CustomError.badRequest('Password is not valid');
 
-
     const { password, ...userEntity} = UserEntity.fromObject( user );
     
     const token = await JwtAdapter.generateToken({ id: user.id });
